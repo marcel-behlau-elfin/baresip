@@ -105,6 +105,7 @@ int webrtc_aec_alloc(struct aec **stp, void **ctx, struct aufilt_prm *prm)
 
 	aec->inst->echo_cancellation()->enable_metrics(true);
 	aec->inst->echo_cancellation()->enable_delay_logging(true);
+	aec->inst->echo_cancellation()->set_suppression_level(webrtc::EchoCancellation::kHighSuppression);
 
 	aec->inst->gain_control()->Enable(true);
 
